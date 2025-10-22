@@ -32,7 +32,9 @@ export function fetchPost(id) {
 //   payload: request
 // };
 
-export function createPost(post) {
+export function createPost(post, callback) {
+  // console.log('createPost: ', post);
+  callback();
   return {
     type: POST_CREATED,
     payload: post

@@ -12,11 +12,11 @@ const PostsShow = () => {
     state.posts.find((p) => p.id === parseInt(id, 10))
   );
 
-  // useEffect(() => {
-  //   if (!post) {
-  //     dispatch(fetchPost(id)); // 🟢 fetch post if missing
-  //   }
-  // }, [id, post, dispatch]);
+  useEffect(() => {
+    if (!post) {
+      dispatch(fetchPost(id)); // 🟢 fetch post if missing
+    }
+  }, [id, post, dispatch]);
 
   if (!post) return <p>Loading...</p>;
 

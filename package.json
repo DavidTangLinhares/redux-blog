@@ -29,7 +29,8 @@
     "react-dom": "18",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.4",
-    "redux": "^3.7.2",
+    "redux": "5",
+    "redux-form": "^8.3.10",
     "redux-logger": "^3.0.6",
     "redux-promise": "^0.5.3"
   },

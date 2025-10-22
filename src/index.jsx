@@ -12,9 +12,11 @@ import PostsShow from './containers/posts_show';
 import PostsNew from './containers/posts_new';
 
 import postsReducer from './reducers/posts_reducer';
+import { reducer as formReducer } from 'redux-form';
 
 const reducers = combineReducers({
-  posts: postsReducer
+  posts: postsReducer,
+  form: formReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
