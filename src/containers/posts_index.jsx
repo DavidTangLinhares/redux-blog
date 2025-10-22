@@ -6,11 +6,13 @@ import { fetchPosts } from '../actions/index';
 
 class PostsIndex extends Component {
   componentDidMount() {
-    this.props.fetchPosts();
+    if (!this.props.posts) {
+      this.props.fetchPosts();
+    }
   }
 
   renderPosts() {
-    // 🟢 Added fallback when no posts yet
+    // Added fallback when no posts yet - for fist rendering
     if (!this.props.posts || this.props.posts.length === 0) {
       return <p>No posts yet.</p>;
     }

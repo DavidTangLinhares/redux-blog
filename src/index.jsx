@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import '../assets/stylesheets/application.scss';
 import PostsIndex from './containers/posts_index';
 import PostsShow from './containers/posts_show';
+import PostsNew from './containers/posts_new';
 
 import postsReducer from './reducers/posts_reducer';
 
@@ -19,7 +20,6 @@ const reducers = combineReducers({
 const middlewares = applyMiddleware(reduxPromise, logger);
 const store = createStore(reducers, {}, middlewares);
 
-// 🟢 Modern React 18 root (no change, but important for v18)
 const container = document.getElementById('root');
 const root = createRoot(container);
 
@@ -27,9 +27,9 @@ root.render(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
-        {/* 🟢 Updated to React Router v6 syntax */}
         <Route path="/" element={<Navigate to="/posts" />} />
         <Route path="/posts" element={<PostsIndex />} />
+        <Route path="/posts/new" element={<PostsNew />} />
         <Route path="/posts/:id" element={<PostsShow />} />
       </Routes>
     </BrowserRouter>
